@@ -41,6 +41,19 @@ public class Filosofos {
     }
     
     public static void imprimir(Filosofo lista[]){
+        for(int p = 0; p < 8; p++){
+            if(lista[p].tiempo_hambre <= 0){ // si se murio
+                System.out.print("x|  "); // imprimimos una carita muerta
+            }
+            else if(lista[p].comiendo == false){ // si no esta comiendo
+                System.out.print(":|  "); // imprimimos una carita seria
+            }
+            else{ //si esta comiendo
+                System.out.print(":D  "); // imprimimos una carita sonriente
+            }
+        }
+        System.out.print("\n");
+        
         for(int i = 0; i < 8; i++){
             if(lista[i].tiempo_hambre <= 0 && lista[i].comiendo == false){ // si ya no tiene hambre y no esta comiendo
                 System.out.println("El filosofo " + (i + 1) + " se murio de hambre.");  // significa que murio
